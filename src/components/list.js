@@ -11,8 +11,14 @@ const List = (() => {
     }
 
     render(){
-      
+
     }
   }
 
 })()
+
+let listForm = document.getElementbyId("create-task-form")
+
+listForm.addEventListener("submit", function(){
+  event.preventDefault()
+})
