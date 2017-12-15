@@ -11,13 +11,13 @@
   <div id="main-content">
     <h1>Flatiron Task Lister</h1>
 
-    <form id="create-list-form" action="#" method="post">
+    <form id="create-list-form">
       <label for="new-list-title">Add a new list:</label>
       <input type="text" id="new-list-title" name="new-list-title" placeholder="title">
       <input type="submit" value="Create New List">
     </form><!-- #create-list-form -->
 
-    <form id="create-task-form" action="#" method="post">
+    <form id="create-task-form" action="#" method="post" style="visibility:hidden;">
       <label for="parent-list">Select List:</label>
       <select id="parent-list" name="parent-list"></select>
       <label for="new-task-description">Task description:</label>
@@ -30,8 +30,19 @@
     <section id="lists"></section>
 
 
-    <script src="src/task.js"></script>
-    <script src="src/list.js"></script>
+    <!-- <div> for Mocha to display test results. -->
+    <div id="mocha"></div>
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script src="src/components/task.js"></script>
+    <script src="src/components/list.js"></script>
+    <script src="src/components/app.js"></script>
+    <script src="src/index.js"></script>
+    <script src="test/taskTest.js"></script>
+    <script src="test/listTest.js"></script>
+    <!-- <script src="test/appTest.js"></script> -->
+    <script src="node_modules/learn-browser/learnBrowser.min.js"></script>
   </div><!-- #main-content -->
 </body>
 </html>
